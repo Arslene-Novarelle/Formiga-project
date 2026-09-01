@@ -1,4 +1,4 @@
-# IDS_CLASSES.md — Referensi ID & Class Warehouse Inventory
+# IDS_CLASSES.md — Referensi ID & Class Formiga-project
 
 Ini semacam contekan biar gak bolak-balik buka file `.php` cuma buat nyari nama id/class. Kepake pas mau colok elemen ke JS (`getElementById`), tarik data dari PHP, atau tempel CSS baru.
 
