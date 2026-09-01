@@ -1,65 +1,50 @@
-# 📌 IDS_CLASSES.md — Daftar ID & Class Project Warehouse Inventory
+# IDS_CLASSES.md — Referensi ID & Class Warehouse Inventory
 
-File ini isinya **daftar semua `id` dan `class`** yang ada di seluruh
-halaman `.php`, supaya kamu tahu elemen mana yang bisa kamu pakai buat:
-- Nyambungin ke JS (`document.getElementById(...)`)
-- Nyambungin ke data backend PHP (misalnya `id="itemTableBody"` = tempat
-  taruh hasil query produk)
-- Styling tambahan lewat CSS
+Ini semacam contekan biar gak bolak-balik buka file `.php` cuma buat nyari nama id/class. Kepake pas mau colok elemen ke JS (`getElementById`), tarik data dari PHP, atau tempel CSS baru.
 
----
+## 1. Sidebar (nempel di semua halaman)
 
-## 1. BAGIAN SHARED (ada di SEMUA halaman) — Sidebar
-
-| ID | Class | Elemen | Fungsi |
+| ID | Class | Tag | Cerita singkat |
 |---|---|---|---|
-| `appLayout` | `.app-layout` | `<div>` | Bungkus paling luar (sidebar + main content). Dapat class `.app-layout--sidebar-collapsed` waktu sidebar ditutup |
-| `sidebar` | `.sidebar` | `<aside>` | Kotak sidebar kiri |
-| `sidebarHeader` | `.sidebar-header` | `<div>` | Baris atas sidebar (logo + tombol) |
-| `sidebarBrand` | `.sidebar-header__brand` | `<div>` | Bungkus logo + nama app |
-| `sidebarLogo` | `.sidebar-header__logo` | `<span>` | Kotak logo (gradient) — belum ada icon/gambar asli |
-| `sidebarAppName` | — | `<span>` | Teks nama aplikasi, isinya masih "Nama App" |
-| `sidebarHeaderActions` | `.sidebar-header__actions` | `<div>` | Bungkus tombol bell + toggle |
-| `navBtnNotifications` | `.icon-btn` | `<a>` | Tombol lonceng (icon `bell`) → link ke `notifications.php` |
-| `notifUnreadBadge` | `.icon-btn__badge` | `<span>` | Titik merah kecil penanda ada notif belum dibaca |
-| `navBtnSidebarToggle` | `.icon-btn` | `<button>` | **Tombol nutup/buka sidebar** (icon `sidebar`) — klik sekali sidebar mengecil jadi icon-only, klik lagi kembali normal. Sudah jalan (lihat bagian 6 di bawah) |
-| `sidebarNavMain` | `.sidebar-nav-main` | `<nav>` | Bungkus menu utama (Search, Home, Dashboard, Item) |
-| `navBtnSearch` | `.sidebar-link` | `<button>` | Tombol "Search" (icon `search`) — belum ada fungsi search-nya |
-| `navLinkHome` | `.sidebar-link` (+`.is-active`) | `<a>` | Link ke `index.php`, icon `home` |
-| `navLinkDashboard` | `.sidebar-link` | `<a>` | Link ke `dashboard.php`, icon `grid` |
-| `navLinkItem` | `.sidebar-link` | `<a>` | Link ke `item.php`, icon `box` |
-| `sidebarDivider` | `.sidebar-divider` | `<div>` | Garis pemisah horizontal |
-| `sidebarGroupInventory` | `.sidebar-group` | `<section>` | Bungkus grup menu "Inventory" |
-| `navLinkStockInOut` | `.sidebar-link` | `<a>` | Link ke `stock-in-out.php`, icon `repeat` |
-| `navLinkWarehouses` | `.sidebar-link` | `<a>` | Link ke `warehouses.php`, icon `archive` |
-| `navLinkCategories` | `.sidebar-link` | `<a>` | Link ke `categories.php`, icon `list` |
-| `navLinkSuppliers` | `.sidebar-link` | `<a>` | Link ke `suppliers.php`, icon `truck` |
-| `sidebarGroupReports` | `.sidebar-group` | `<section>` | Bungkus grup menu "Reports" |
-| `navLinkStockReport` | `.sidebar-link` | `<a>` | Link ke `stock-report.php`, icon `clipboard` |
-| `navLinkValuationReport` | `.sidebar-link` | `<a>` | Link ke `valuation-report.php`, icon `dollar-sign` |
-| `navLinkTransactionHistory` | `.sidebar-link` | `<a>` | Link ke `transaction-history.php`, icon `clock` |
-| `sidebarFooter` | `.sidebar-footer` | `<div>` | Bungkus kartu profil user di bawah sidebar |
-| `sidebarUserProfile` | `.sidebar-user` | `<a>` | Link ke `profile.php` (pintu masuk tab Profile), icon `chevron-right` |
-| `sidebarUserAvatar` | `.sidebar-user__avatar` | `<span>` | Inisial/foto user, isinya masih huruf "U" |
-| `sidebarUserName` / `sidebarUserRole` | — | `<span>` | Nama & sub-teks user, masih statis |
+| `appLayout` | `.app-layout` | `<div>` | Pembungkus paling luar, isinya sidebar + konten. Pas sidebar diciutin, nempel class `.app-layout--sidebar-collapsed` |
+| `sidebar` | `.sidebar` | `<aside>` | Panel kiri |
+| `sidebarHeader` | `.sidebar-header` | `<div>` | Baris teratas panel kiri, ada logo sama tombol-tombol |
+| `sidebarBrand` | `.sidebar-header__brand` | `<div>` | Pembungkus logo + nama aplikasi |
+| `sidebarLogo` | `.sidebar-header__logo` | `<span>` | Kotak gradient buat logo, gambarnya belum diisi |
+| `sidebarAppName` | — | `<span>` | Nama app, sekarang masih ketulis "Nama App" doang |
+| `sidebarHeaderActions` | `.sidebar-header__actions` | `<div>` | Wadah tombol lonceng sama tombol ciutin sidebar |
+| `navBtnNotifications` | `.icon-btn` | `<a>` | Lonceng notif (icon `bell`), ngarah ke `notifications.php` |
+| `notifUnreadBadge` | `.icon-btn__badge` | `<span>` | Bulatan merah kecil tanda ada notif baru |
+| `navBtnSidebarToggle` | `.icon-btn` | `<button>` | Ciutin/lebarin sidebar (icon `sidebar`) — sekali klik jadi mode icon doang, klik lagi balik lebar. Fiturnya udah beres, cek poin 6 |
+| `sidebarNavMain` | `.sidebar-nav-main` | `<nav>` | Kumpulan menu inti: Search, Home, Dashboard, Item |
+| `navBtnSearch` | `.sidebar-link` | `<button>` | Tombol Search, tapi fungsinya belum digarap |
+| `navLinkHome` | `.sidebar-link` (+`.is-active`) | `<a>` | Nuju `index.php`, pake icon `home` |
+| `navLinkDashboard` | `.sidebar-link` | `<a>` | Nuju `dashboard.php`, icon `grid` |
+| `navLinkItem` | `.sidebar-link` | `<a>` | Nuju `item.php`, icon `box` |
+| `sidebarDivider` | `.sidebar-divider` | `<div>` | Cuma garis pembatas |
+| `sidebarGroupInventory` | `.sidebar-group` | `<section>` | Kumpulan menu Inventory |
+| `navLinkStockInOut` | `.sidebar-link` | `<a>` | Nuju `stock-in-out.php`, icon `repeat` |
+| `navLinkWarehouses` | `.sidebar-link` | `<a>` | Nuju `warehouses.php`, icon `archive` |
+| `navLinkCategories` | `.sidebar-link` | `<a>` | Nuju `categories.php`, icon `list` |
+| `navLinkSuppliers` | `.sidebar-link` | `<a>` | Nuju `suppliers.php`, icon `truck` |
+| `sidebarGroupReports` | `.sidebar-group` | `<section>` | Kumpulan menu Reports |
+| `navLinkStockReport` | `.sidebar-link` | `<a>` | Nuju `stock-report.php`, icon `clipboard` |
+| `navLinkValuationReport` | `.sidebar-link` | `<a>` | Nuju `valuation-report.php`, icon `dollar-sign` |
+| `navLinkTransactionHistory` | `.sidebar-link` | `<a>` | Nuju `transaction-history.php`, icon `clock` |
+| `sidebarFooter` | `.sidebar-footer` | `<div>` | Kotak profil user, nongkrong paling bawah sidebar |
+| `sidebarUserProfile` | `.sidebar-user` | `<a>` | Nuju `profile.php`, ada icon `chevron-right` |
+| `sidebarUserAvatar` | `.sidebar-user__avatar` | `<span>` | Foto/inisial user, sekarang cuma huruf "U" |
+| `sidebarUserName` / `sidebarUserRole` | — | `<span>` | Nama sama jabatan user, isinya masih hardcode |
 
----
+## 2. Asal-usul icon
 
-## 2. SUMBER ICON (PENTING)
+Icon yang dipake bukan bikinan sendiri, semuanya narik dari [Feather Icons](https://feathericons.com/) lewat paket npm `feather-icons`. Kode SVG-nya ditempel langsung ke HTML (inline), jadi gak perlu koneksi internet buat nongolin icon — beda kalau pake font-icon macam Font Awesome yang butuh CDN.
 
-Semua icon di project ini **bukan buatan sendiri** — di-ambil dari
-**[Feather Icons](https://feathericons.com/)** (via package npm
-`feather-icons`), lalu SVG-nya di-copy langsung ke dalam HTML (inline
-SVG). Jadi:
-- Tidak butuh koneksi internet buat nampilin icon (beda dengan font-icon
-  seperti Font Awesome yang butuh CDN).
-- Kalau mau ganti icon tertentu, tinggal cari nama icon-nya di
-  https://feathericons.com/, copy SVG-nya, dan tempel menggantikan SVG
-  lama di file `.php` terkait (posisinya ada di dalam `<span class="sidebar-link__icon">...</span>` atau `<span class="icon-btn">`/dst).
+Mau ganti salah satu icon? Buka feathericons.com, cari icon incaran, salin SVG-nya, tempel gantiin yang lama di file `.php` terkait. Posisinya biasanya di dalam `<span class="sidebar-link__icon">` atau `<span class="icon-btn">`.
 
-Daftar icon yang dipakai & di mana:
+Rekap icon yang kepake:
 
-| Nama Icon (Feather) | Dipakai untuk |
+| Nama icon (Feather) | Lokasi pemakaian |
 |---|---|
 | `search` | Tombol Search |
 | `home` | Menu Home |
@@ -73,106 +58,68 @@ Daftar icon yang dipakai & di mana:
 | `dollar-sign` | Menu Valuation Report |
 | `clock` | Menu Transaction History |
 | `bell` | Tombol notifikasi |
-| `sidebar` | Tombol nutup/buka sidebar |
+| `sidebar` | Tombol ciutin/lebarin sidebar |
 | `chevron-right` | Panah kecil di kartu profil |
-| `plus` | Tombol tambah (Add Product/Warehouse/dst) |
+| `plus` | Tombol tambah (Add Product/Warehouse/dll) |
 | `trash-2` | Tombol Delete All |
-| `arrow-up` / `arrow-down` | Toggle Stock Masuk / Stock Keluar |
-| `alert-triangle` | Notifikasi danger & warning |
-| `check-circle` / `check-square` | Notifikasi netral/info |
+| `arrow-up` / `arrow-down` | Toggle Stock Masuk / Keluar |
+| `alert-triangle` | Notif danger & warning |
+| `check-circle` / `check-square` | Notif netral/info |
 
----
+## 3. Wadah konten utama
 
-## 3. BAGIAN SHARED — Main Content Wrapper
+`mainContent` (class `.main-content`) — nampung semua isi sisi kanan layar, dari header sampai body tiap halaman.
 
-| ID | Class | Fungsi |
-|---|---|---|
-| `mainContent` | `.main-content` | Bungkus seluruh konten kanan (header + body halaman) |
+## 4. Komponen yang muncul di banyak tempat
 
----
-
-## 4. KOMPONEN UMUM (class saja, dipakai berulang di banyak halaman)
-
-| Class | Fungsi |
+| Class | Kegunaan |
 |---|---|
-| `.btn`, `.btn--primary`, `.btn--danger`, `.btn--outline` | Tombol umum + 3 varian warna |
-| `.search-box` | Kotak search dengan icon kaca pembesar |
-| `.card`, `.card__title`, `.card__footer-link` | Kotak/panel dasar |
-| `.grid-3col`, `.grid-2col` | Grid layout 3 kolom / 2 kolom |
-| `.stats-grid`, `.stat-card`, `.stat-card__label`, `.stat-card__value` | Kartu statistik di Dashboard |
-| `.chart-canvas-wrapper` | Bungkus `<canvas>` chart — kasih tinggi tetap (260px) supaya Chart.js tahu ukurannya |
-| `.simple-list`, `.simple-list__item`, `.simple-list__empty` | List sederhana di dalam card |
-| `.table-wrapper`, `.data-table` | Bungkus tabel + tabel data utama |
-| `.badge`, `.badge--success/--danger/--warning/--neutral` | Label kecil status/jumlah |
-| `.toggle-group`, `.toggle-btn`, `.toggle-btn--in`, `.toggle-btn--out` | Toggle 2 pilihan (Stock Masuk/Keluar) |
-| `.filters-row`, `.filter-field` | Baris filter (dropdown/tanggal) |
-| `.notification-list`, `.notification-item`, `.notification-item--danger/--warning/--neutral` | Komponen daftar notifikasi |
-| `.profile-card`, `.profile-form`, `.form-field` | Komponen halaman Profile |
-| `.app-layout--sidebar-collapsed` | Ditambahkan/dihapus otomatis di `#appLayout` waktu tombol sidebar diklik |
+| `.btn`, `.btn--primary`, `.btn--danger`, `.btn--outline` | Tombol standar plus tiga varian warnanya |
+| `.search-box` | Kotak pencarian dengan icon kaca pembesar |
+| `.card`, `.card__title`, `.card__footer-link` | Panel/kotak dasar |
+| `.grid-3col`, `.grid-2col` | Layout grid 3 kolom / 2 kolom |
+| `.stats-grid`, `.stat-card`, `.stat-card__label`, `.stat-card__value` | Kartu angka statistik di Dashboard |
+| `.chart-canvas-wrapper` | Pembungkus `<canvas>`, ngasih tinggi tetap 260px supaya Chart.js bisa hitung ukurannya |
+| `.simple-list`, `.simple-list__item`, `.simple-list__empty` | List ringkas di dalam card |
+| `.table-wrapper`, `.data-table` | Pembungkus tabel plus tabel datanya sendiri |
+| `.badge`, `.badge--success/--danger/--warning/--neutral` | Label kecil buat status atau jumlah |
+| `.toggle-group`, `.toggle-btn`, `.toggle-btn--in`, `.toggle-btn--out` | Toggle dua pilihan Stock Masuk/Keluar |
+| `.filters-row`, `.filter-field` | Baris berisi dropdown/filter tanggal |
+| `.notification-list`, `.notification-item`, `.notification-item--danger/--warning/--neutral` | Susunan daftar notifikasi |
+| `.profile-card`, `.profile-form`, `.form-field` | Bagian-bagian halaman Profile |
+| `.app-layout--sidebar-collapsed` | Otomatis nempel/lepas di `#appLayout` tiap tombol sidebar dipencet |
 
----
+## 5. Canvas buat chart (Chart.js)
 
-## 5. ID CANVAS CHART (Chart.js)
-
-| ID Canvas | Ada di halaman | Isi contoh saat ini |
+| ID Canvas | Muncul di | Isi sekarang |
 |---|---|---|
-| `homeBarChart` | `index.php` | Stok Masuk vs Keluar, 7 hari terakhir |
-| `dashboardBarChart` | `dashboard.php` | Total stok per kategori produk |
+| `homeBarChart` | `index.php` | Perbandingan Stok Masuk vs Keluar, 7 hari belakangan |
+| `dashboardBarChart` | `dashboard.php` | Jumlah stok tiap kategori |
 | `stockReportChart` | `stock-report.php` | Stok Masuk vs Keluar per bulan |
 
-Konfigurasi & data masing-masing chart ada di **`assets/js/charts.js`**
-(cari fungsi `initHomeChart()`, `initDashboardChart()`,
-`initStockReportChart()`). Penjelasan cara kerjanya ada di komentar
-paling atas file itu, dan juga di `README.md` bagian "Cara kerja diagram".
+Setup masing-masing chart ada di `assets/js/charts.js`, cari fungsi `initHomeChart()`, `initDashboardChart()`, `initStockReportChart()`. Ada penjelasan lebih detail di komentar bagian atas file itu, plus di README pada bagian "Cara kerja diagram".
 
----
+## 6. Rincian ID tiap halaman
 
-## 6. ID KHUSUS PER HALAMAN
+**`index.php` (Home)** — `homeGreetingBanner`, `homeGreetingText`, `cardHomeChart` + canvas `homeBarChart`, `homeInsightsGrid`, `cardTopStockIn`/`listTopStockIn`, `cardLowStock`/`listLowStock`, `cardNotificationsPreview`/`listNotificationsPreview`.
 
-### `index.php` (Home)
-`homeGreetingBanner`, `homeGreetingText`, `cardHomeChart` + canvas `homeBarChart`,
-`homeInsightsGrid`, `cardTopStockIn`/`listTopStockIn`,
-`cardLowStock`/`listLowStock`, `cardNotificationsPreview`/`listNotificationsPreview`.
+**`dashboard.php`** — `dashboardHeader`, `dashboardStatsGrid` (di dalamnya ada `statTotalProduk(Value)`, `statTotalStokMasuk(Value)`, `statTotalStokKeluar(Value)`, `statNilaiInventori(Value)`), `cardDashboardChart` + canvas `dashboardBarChart`, `dashboardListsGrid` (`cardDashboardStockIn`, `cardDashboardLowStock`).
 
-### `dashboard.php`
-`dashboardHeader`, `dashboardStatsGrid` (isi: `statTotalProduk(Value)`,
-`statTotalStokMasuk(Value)`, `statTotalStokKeluar(Value)`,
-`statNilaiInventori(Value)`), `cardDashboardChart` + canvas `dashboardBarChart`,
-`dashboardListsGrid` (`cardDashboardStockIn`, `cardDashboardLowStock`).
+**`item.php`** — `itemToolbar`, `itemSearchInput`, `btnDeleteAllItems`, `btnAddProduct`, `itemTable` / `itemTableBody`.
 
-### `item.php`
-`itemToolbar`, `itemSearchInput`, `btnDeleteAllItems`, `btnAddProduct`,
-`itemTable` / `itemTableBody`.
+**`stock-in-out.php`** — `stockTypeToggle` (`btnStockMasuk`, `btnStockKeluar`), `filterSupplier`, `filterGudang`, `filterTanggal`, `stockInOutTable` / `stockInOutTableBody`.
 
-### `stock-in-out.php`
-`stockTypeToggle` (`btnStockMasuk`, `btnStockKeluar`), `filterSupplier`,
-`filterGudang`, `filterTanggal`, `stockInOutTable` / `stockInOutTableBody`.
+**`warehouses.php`, `categories.php`, `suppliers.php`** — semuanya ngikutin pola yang sama, cuma prefix-nya beda: `{prefix}Header`, `btnAdd{Prefix}`, `{prefix}Table` / `{prefix}TableBody`.
 
-### `warehouses.php`, `categories.php`, `suppliers.php`
-Pola sama, beda prefix: `{prefix}Header`, `btnAdd{Prefix}`,
-`{prefix}Table` / `{prefix}TableBody`.
+**`stock-report.php`, `valuation-report.php`, `transaction-history.php`** — pola serupa lagi, prefix beda-beda (`stockReport`, `valuationReport`, `transactionHistory`): `{prefix}Header`, `btnExport{Prefix}`, `{prefix}Filters` (`{prefix}DateFrom`/`DateTo`). Khusus Stock Report nambah `{prefix}ChartCard` + canvas `{prefix}Chart`, dan tetap ada `{prefix}Table` / `{prefix}TableBody`.
 
-### `stock-report.php`, `valuation-report.php`, `transaction-history.php`
-Pola sama, beda prefix (`stockReport`, `valuationReport`,
-`transactionHistory`): `{prefix}Header`, `btnExport{Prefix}`,
-`{prefix}Filters` (`{prefix}DateFrom`/`DateTo`), *(khusus Stock Report)*
-`{prefix}ChartCard` + canvas `{prefix}Chart`, `{prefix}Table` / `{prefix}TableBody`.
+**`notifications.php`** — `notificationsHeader`, `btnReadAllNotif`, `notificationList`, `notifItem1` (danger), `notifItem2` (warning), `notifItem3` (neutral).
 
-### `notifications.php`
-`notificationsHeader`, `btnReadAllNotif`, `notificationList`,
-`notifItem1` (danger), `notifItem2` (warning), `notifItem3` (neutral).
+**`profile.php`** — `profileCard`/`profileCardInner`, `profileAvatar`, `profileName`, `profileEmail`, `profileForm`, `profileInput{Name/Email/Phone/Role}`, `btnSaveProfile`.
 
-### `profile.php`
-`profileCard`/`profileCardInner`, `profileAvatar`, `profileName`,
-`profileEmail`, `profileForm`, `profileInput{Name/Email/Phone/Role}`,
-`btnSaveProfile`.
+## 7. Cara penamaan yang dipegang
 
----
-
-## 7. Penamaan yang dipakai
-
-- **ID** pakai `camelCase` → `btnAddProduct`, `itemTableBody`
-- **Class komponen** pakai gaya BEM sederhana → `blok__elemen`, `blok--varian`
-- Tabel kosong selalu punya `<tr class="table-empty-row">` sebagai placeholder
-- Semua bagian yang masih butuh disambungkan ke PHP/database ditandai
-  komentar `<!-- TODO(backend): ... -->` langsung di file `.php`-nya
+- ID selalu `camelCase`, contoh `btnAddProduct`, `itemTableBody`
+- Class komponen ngikutin BEM sederhana: `blok__elemen`, `blok--varian`
+- Setiap tabel kosong wajib punya `<tr class="table-empty-row">` sebagai pengganti sementara
+- Bagian yang belum nyambung ke PHP/database dikasih penanda komentar `<!-- TODO(backend): ... -->` langsung di file `.php`-nya
