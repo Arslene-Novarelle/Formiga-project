@@ -1,0 +1,117 @@
+/* RESPONSIVE — dipakai semua tab */
+/* ==========================================================================
+   RESPONSIVE.CSS
+   Dipakai oleh: ALL PHP FILES — responsive breakpoints
+   ========================================================================== */
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 1100px) {
+  .main-content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-3col {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .app-layout {
+    min-height: 100vh;
+  }
+
+  .sidebar,
+  .app-layout--sidebar-collapsed .sidebar {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .app-layout--sidebar-collapsed .sidebar-header__brand span:last-child,
+  .app-layout--sidebar-collapsed .sidebar-header__actions,
+  .app-layout--sidebar-collapsed .sidebar-link__label,
+  .app-layout--sidebar-collapsed .sidebar-group__title,
+  .app-layout--sidebar-collapsed .sidebar-user__meta,
+  .app-layout--sidebar-collapsed .sidebar-user__chevron {
+    display: initial;
+  }
+
+  .app-layout--sidebar-collapsed .sidebar-header {
+    justify-content: space-between;
+  }
+
+  .app-layout--sidebar-collapsed .sidebar-link {
+    justify-content: flex-start;
+  }
+
+  .app-layout--sidebar-collapsed .sidebar-group__header {
+    justify-content: flex-start;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 22px 16px 30px;
+  }
+
+  .app-layout--sidebar-collapsed .main-content {
+    margin-left: 0;
+  }
+
+  .grid-2col,
+  .profile-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field--full {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-header__title {
+    font-size: 20px;
+  }
+
+  .content-header__actions {
+    width: 100%;
+  }
+
+  .content-header__actions .btn {
+    flex: 1;
+  }
+
+  .search-box {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .toggle-group {
+    width: 100%;
+  }
+
+  .chart-canvas-wrapper {
+    height: 230px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}

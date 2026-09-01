@@ -1,0 +1,11 @@
+/* CSS MAP
+   Global yang benar-benar dipakai semua halaman:
+   - base.css
+   - sidebar.css  -> sidebar tunggal, dipanggil dari includes/sidebar.php
+   - layout.css
+   - responsive.css
+
+   CSS halaman tetap dipisah per tab di file masing-masing.
+   Tidak ada folder shared untuk button/chart/table/card agar perubahan satu
+   halaman tidak ikut mengubah halaman lain.
+*/

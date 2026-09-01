@@ -1,0 +1,75 @@
+/* LAYOUT — main content/header */
+/* ==========================================================================
+   LAYOUT.CSS
+   Dipakai oleh: ALL PHP FILES — main content/header layout
+   ========================================================================== */
+
+/* =========================================================================
+   MAIN CONTENT
+   ========================================================================= */
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+
+  padding: 28px 34px 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background: var(--color-bg);
+  /* [DIHAPUS] margin-left: var(--sidebar-width);
+     Ini dulu perlu waktu sidebar & .main-content ada di 1 halaman yang
+     sama. Sekarang .main-content selalu dimuat DI DALAM <iframe> di
+     index.php, dan geseran buat sidebar-nya sudah ditangani di sana
+     lewat .content-frame { margin-left: ... }. Kalau baris ini masih
+     aktif, kontennya kegeser dobel (240px + 240px lagi). */
+
+  transition: margin-left .32s cubic-bezier(.4,0,.2,1);
+}
+
+.content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.content-header__title {
+  color: var(--color-text-primary);
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -.035em;
+}
+
+.content-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Banner greeting mengikuti card besar di acuan */
+
+.content-header--banner {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: none;
+}
+
+.content-header--banner .content-header__title {
+  font-size: 24px;
+  letter-spacing: -.04em;
+}
+
+
+/* [DIHAPUS] .app-layout--sidebar-collapsed .main-content { margin-left: ... }
+   Alasan sama seperti di atas: class ".app-layout--sidebar-collapsed"
+   sekarang cuma ada di index.php (bungkus iframe-nya), bukan di
+   halaman-halaman yang dimuat di dalam iframe. Geseran versi collapsed-nya
+   juga sudah ditangani index.php lewat ".app-layout--sidebar-collapsed
+   .content-frame". */

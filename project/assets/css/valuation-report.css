@@ -1,0 +1,264 @@
+/* VALUATION REPORT — CSS TAB / PAGE */
+/* CSS global yang benar-benar dipakai semua tab di-import dari file root.
+   Komponen lain sengaja ditempatkan langsung di file tab ini. */
+
+@import url("base.css");
+@import url("sidebar.css");
+@import url("layout.css");
+
+/* ================================================================
+   COMPONENT: BUTTONS.CSS
+   Khusus/termasuk langsung di CSS tab ini supaya mudah diubah.
+   ================================================================ */
+/* =========================================================================
+   BUTTONS
+   ========================================================================= */
+
+.btn {
+  min-height: 36px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 8px 13px;
+  border-radius: 9px;
+
+  border: 1px solid transparent;
+
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  transition:
+    background .18s,
+    border-color .18s,
+    color .18s,
+    transform .12s;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn--primary {
+  background: #e8e8ea;
+  color: #111114;
+  border-color: #e8e8ea;
+}
+
+.btn--primary:hover {
+  background: #fff;
+  border-color: #fff;
+}
+
+.btn--danger {
+  background: rgba(255,92,104,.12);
+  color: #ff737c;
+  border-color: rgba(255,92,104,.18);
+}
+
+.btn--danger:hover {
+  background: rgba(255,92,104,.18);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.btn--outline:hover {
+  background: var(--color-surface-hover);
+}
+
+/* ================================================================
+   COMPONENT: FILTERS.CSS
+   Khusus/termasuk langsung di CSS tab ini supaya mudah diubah.
+   ================================================================ */
+/* =========================================================================
+   SEARCH / FILTER
+   ========================================================================= */
+
+.search-box {
+  min-width: 260px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 11px;
+
+  background: #1e1e22;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+
+  transition: background .18s, border-color .18s;
+}
+
+.search-box:focus-within {
+  border-color: rgba(124,92,252,.5);
+}
+
+.search-box svg {
+  width: 15px;
+  height: 15px;
+  color: #7a7a88;
+  flex-shrink: 0;
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+
+  background: transparent;
+  border: 0;
+  outline: 0;
+
+  color: var(--color-text-primary);
+  font-size: 12.5px;
+}
+
+.search-box input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.filters-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-field label {
+  color: var(--color-text-secondary);
+  font-size: 11.5px;
+  font-weight: 550;
+}
+
+.filter-field select,
+.filter-field input {
+  width: 100%;
+  min-height: 36px;
+
+  padding: 8px 10px;
+
+  background: #1e1e22;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 9px;
+
+  color: var(--color-text-primary);
+  font-size: 12.5px;
+  outline: none;
+
+  transition: border-color .18s, background .18s;
+}
+
+.filter-field select:focus,
+.filter-field input:focus {
+  border-color: rgba(124,92,252,.5);
+}
+
+
+
+/* ================================================================
+   COMPONENT: CARDS
+   Khusus halaman Valuation Report
+   ================================================================ */
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: none;
+}
+
+.card__title {
+  margin-bottom: 15px;
+  color: var(--color-text-primary);
+  font-size: 13.5px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+
+/* ================================================================
+   COMPONENT: TABLES.CSS
+   Khusus/termasuk langsung di CSS tab ini supaya mudah diubah.
+   ================================================================ */
+/* TABLES — komponen tabel yang sama */
+/* ==========================================================================
+   TABLES.CSS
+   Dipakai oleh: categories.php, item.php, stock-report.php, suppliers.php, transaction-history.php, valuation-report.php, warehouses.php
+   ========================================================================== */
+
+/* =========================================================================
+   TABLE
+   ========================================================================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 12.5px;
+}
+
+.data-table thead th {
+  padding: 11px 12px;
+
+  color: var(--color-text-secondary);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+  text-align: left;
+  white-space: nowrap;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data-table tbody td {
+  padding: 12px;
+
+  color: var(--color-text-primary);
+  border-bottom: 1px solid rgba(255,255,255,.045);
+}
+
+.data-table tbody tr {
+  transition: background .16s;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(255,255,255,.025);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.data-table .table-empty-row td {
+  padding: 42px 16px;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+@import url("responsive.css");
